@@ -14,7 +14,7 @@ public class Customer {
         this.claims = claims;
     }
 
-    // Gtters & Setters
+    // Getters & Setters
 
     public String getId() {
         return id;
