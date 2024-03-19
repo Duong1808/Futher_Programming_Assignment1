@@ -1,14 +1,14 @@
 public class BankingInfo {
     private String bank;
     private String name;
-    private String nummber;
+    private String number;
 
     // Constructor
 
     public BankingInfo(String bank, String name, String nummber) {
         this.bank = bank;
         this.name = name;
-        this.nummber = nummber;
+        this.number = nummber;
     }
 
     // Getters & Setters
@@ -29,11 +29,11 @@ public class BankingInfo {
         this.name = name;
     }
 
-    public String getNummber() {
-        return nummber;
+    public String getNumber() {
+        return number;
     }
 
     public void setNummber(String nummber) {
-        this.nummber = nummber;
+        this.number = nummber;
     }
 }
