@@ -8,14 +8,17 @@ public class Claim {
     private String cardNumber;
     private Date examDate;
     private List<String> documents;
-
     private double claimAmount;
-    private String status;
-    private String[] receiverBankingInfo;
+    private  ClaimStatus status;
+    private BankingInfo bankingInfo;
+
+    public enum ClaimStatus {
+        NEW, PROCESSING, DONE
+    }
 
     // Constructor
-
-    public Claim(String id, Date claimDate, String insuredPerson, String cardNumber, Date examDate, List<String> documents, double claimAmount, String status, String[] receiverBankingInfo) {
+    public Claim() {}
+    public Claim(String id, Date claimDate, String insuredPerson, String cardNumber, Date examDate, List<String> documents, double claimAmount, ClaimStatus status, BankingInfo bankingInfo) {
         this.id = id;
         this.claimDate = claimDate;
         this.insuredPerson = insuredPerson;
@@ -24,11 +27,10 @@ public class Claim {
         this.documents = documents;
         this.claimAmount = claimAmount;
         this.status = status;
-        this.receiverBankingInfo = receiverBankingInfo;
+        this.bankingInfo = bankingInfo;
     }
 
-    // Getters & Setters
-
+    // Getter & Setter
     public String getId() {
         return id;
     }
@@ -85,19 +87,19 @@ public class Claim {
         this.claimAmount = claimAmount;
     }
 
-    public String getStatus() {
+    public ClaimStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(ClaimStatus status) {
         this.status = status;
     }
 
-    public String[] getReceiverBankingInfo() {
-        return receiverBankingInfo;
+    public BankingInfo getBankingInfo() {
+        return bankingInfo;
     }
 
-    public void setReceiverBankingInfo(String[] receiverBankingInfo) {
-        this.receiverBankingInfo = receiverBankingInfo;
+    public void setBankingInfo(BankingInfo bankingInfo) {
+        this.bankingInfo = bankingInfo;
     }
 }

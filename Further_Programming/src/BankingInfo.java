@@ -5,6 +5,8 @@ public class BankingInfo {
 
     // Constructor
 
+    public BankingInfo() {}
+
     public BankingInfo(String bank, String name, String nummber) {
         this.bank = bank;
         this.name = name;

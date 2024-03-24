@@ -6,8 +6,8 @@ public class InsuranceCard {
     private String policyOwner;
     private Date expirationDate;
 
-    //Constructor
-
+    // Constructor
+    public InsuranceCard() {}
     public InsuranceCard(String cardNumber, String cardHolder, String policyOwner, Date expirationDate) {
         this.cardNumber = cardNumber;
         this.cardHolder = cardHolder;
@@ -16,7 +16,6 @@ public class InsuranceCard {
     }
 
     // Getters & Setters
-
 
     public String getCardNumber() {
         return cardNumber;
@@ -48,5 +47,8 @@ public class InsuranceCard {
 
     public void setExpirationDate(Date expirationDate) {
         this.expirationDate = expirationDate;
+    }
+
+    public void display() {
     }
 }

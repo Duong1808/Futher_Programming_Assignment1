@@ -14,6 +14,8 @@ public class Customer {
         this.claims = claims;
     }
 
+    public Customer() {}
+
     // Getters & Setters
 
     public String getId() {
@@ -48,7 +50,6 @@ public class Customer {
         this.claims = claims;
     }
 
-    public void display() {
+    // Method to display customer details
 
-    }
 }
