@@ -1,8 +1,10 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class InsuranceClaimsManagementSystem {
 
     public static void main(String[] args) {
+
         FileManager fileManager = new FileManager();
         List<Customer> customers = fileManager.readCustomersFromFile("customers.txt");
         List<InsuranceCard> insuranceCards = fileManager.readInsuranceCardsFromFile("insurance_cards.txt");
