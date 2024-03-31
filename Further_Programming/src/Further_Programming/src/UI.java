@@ -1,9 +1,10 @@
+package Further_Programming.src;
+
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
-import java.io.IOException;
-import java.text.ParseException;
 public class UI {
     private List<Customer> customers;
     private List<InsuranceCard> insuranceCards;
@@ -102,7 +103,6 @@ public class UI {
         claim.setExamDate(examDate);
         claim.setStatus(status);
         claimProcessManager.add(claim);
-        FileManager.writeClaimsToFile(claims, "Further_Programming/src/claims.txt");
         System.out.println("Claim added successfully.");
     }
     private void updateClaim() {

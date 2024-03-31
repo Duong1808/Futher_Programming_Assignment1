@@ -1,3 +1,5 @@
+package Further_Programming.src;
+
 import java.util.Date;
 import java.util.List;
 
@@ -30,7 +32,7 @@ public class Claim {
         this.bankingInfo = bankingInfo;
     }
 
-    // Getter & Setterc
+    // Getter & Setter
     public String getId() {
         return id;
     }

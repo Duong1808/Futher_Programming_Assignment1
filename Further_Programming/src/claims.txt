@@ -1,1 +1,0 @@
-F-1234567890,2024-01-01,Duong Nguyen,IC123456789,2024-03-15,doc1.pdf;doc2.pdf,1000.0,NEW,BankA,Duong Nguyen,123456
