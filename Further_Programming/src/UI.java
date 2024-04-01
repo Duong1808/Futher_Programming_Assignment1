@@ -102,7 +102,6 @@ public class UI {
         claim.setExamDate(examDate);
         claim.setStatus(status);
         claimProcessManager.add(claim);
-        FileManager.writeClaimsToFile(claims, "Further_Programming/src/claims.txt");
         System.out.println("Claim added successfully.");
     }
     private void updateClaim() {
