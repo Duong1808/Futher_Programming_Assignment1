@@ -1,6 +1,10 @@
 import java.util.Date;
 import java.util.List;
 
+/**
+ * @author <Nguyen Tuan Duong - S3965530>
+ */
+
 public class Claim {
     private String id;
     private Date claimDate;
@@ -16,7 +20,7 @@ public class Claim {
         NEW, PROCESSING, DONE
     }
 
-    // Constructor
+    // 1. Constructor
     public Claim() {}
     public Claim(String id, Date claimDate, String insuredPerson, String cardNumber, Date examDate, List<String> documents, double claimAmount, ClaimStatus status, BankingInfo bankingInfo) {
         this.id = id;
@@ -30,7 +34,7 @@ public class Claim {
         this.bankingInfo = bankingInfo;
     }
 
-    // Getter & Setterc
+    // 2. Getter & Setter
     public String getId() {
         return id;
     }
@@ -101,5 +105,20 @@ public class Claim {
 
     public void setBankingInfo(BankingInfo bankingInfo) {
         this.bankingInfo = bankingInfo;
+    }
+
+    @Override
+    public String toString() {
+        return "Claim{" +
+                "id='" + id + '\'' +
+                ", claimDate=" + claimDate +
+                ", insuredPerson='" + insuredPerson + '\'' +
+                ", cardNumber='" + cardNumber + '\'' +
+                ", examDate=" + examDate +
+                ", documents=" + documents +
+                ", claimAmount=" + claimAmount +
+                ", status=" + status +
+                ", bankingInfo=" + bankingInfo +
+                '}';
     }
 }

@@ -4,12 +4,19 @@ import java.util.List;
 import java.util.Scanner;
 import java.io.IOException;
 import java.text.ParseException;
-public class UI {
+
+/**
+ * @author <Nguyen Tuan Duong - S3965530>
+ */
+public class UI implements UserInterface {
+
+    // this class is for user to interact with the system
     private List<Customer> customers;
     private List<InsuranceCard> insuranceCards;
     private List<Claim> claims;
     private ClaimProcessManager claimProcessManager;
 
+    // 1. Constructor
     public UI(List<Customer> customers, List<InsuranceCard> insuranceCards, List<Claim> claims) {
         this.customers = customers;
         this.insuranceCards = insuranceCards;
@@ -17,7 +24,8 @@ public class UI {
         this.claimProcessManager = new ClaimProcessManagerImplementation(claims);
     }
 
-    public void run() {
+    // 2. Menu
+    public void Menu() {
         Scanner scanner = new Scanner(System.in);
         int choice;
         do {
@@ -47,7 +55,8 @@ public class UI {
                     viewAllClaims();
                     break;
                 case 6:
-                    System.out.println("Already existed");
+                    System.out.println("Exiting...");
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("Invalid");
@@ -55,7 +64,8 @@ public class UI {
         } while (choice != 6);
     }
 
-    private void addClaim() {
+    // 2. Method to add, delete, view claim
+    public void addClaim() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Claim ID: ");
         String id = scanner.nextLine();
@@ -104,7 +114,7 @@ public class UI {
         claimProcessManager.add(claim);
         System.out.println("Claim added successfully.");
     }
-    private void updateClaim() {
+    public void updateClaim() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the ID of the claim to update: ");
         String id = scanner.nextLine();
@@ -132,14 +142,14 @@ public class UI {
         claimProcessManager.update(existingClaim);
         System.out.println("Claim updated successfully.");
     }
-    private void deleteClaim() {
+    public void deleteClaim() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the ID of the claim to delete: ");
         String id = scanner.nextLine();
         claimProcessManager.delete(id);
         System.out.println("Claim deleted successfully.");
     }
-    private void viewClaimDetails() {
+    public void viewClaimDetails() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the ID of the claim to view details: ");
         String id = scanner.nextLine();
@@ -155,7 +165,7 @@ public class UI {
             System.out.println("Claim not found.");
         }
     }
-    private void viewAllClaims() {
+    public void viewAllClaims() {
         List<Claim> allClaims = claimProcessManager.getAll();
         System.out.println("All Claims:");
         for (Claim claim : allClaims) {
@@ -163,13 +173,4 @@ public class UI {
                     ", Claim Date: " + claim.getClaimDate() + ", Status: " + claim.getStatus());
         }
     }
-
-//    private Date parseDate(String dateString) {
-//        try {
-//            return DATE_FORMAT.parse(dateString);
-//        } catch (ParseException e) {
-//            System.out.println("Invalid date format. Please use yyyy-MM-dd.");
-//            return null;
-//        }
-//    }
 }

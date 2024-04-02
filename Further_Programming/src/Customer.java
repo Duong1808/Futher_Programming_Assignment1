@@ -1,12 +1,16 @@
 import java.util.List;
 
+/**
+ * @author <Nguyen Tuan Duong - S3965530>
+ */
+
 public class Customer {
     private String id;
     private String fullName;
     private InsuranceCard insuranceCard;
     private List<Claim> claims;
 
-    // Constructor
+    // 1. Constructor
     public Customer(String id, String fullName, InsuranceCard insuranceCard, List<Claim> claims) {
         this.id = id;
         this.fullName = fullName;
@@ -16,7 +20,7 @@ public class Customer {
 
     public Customer() {}
 
-    // Getters & Setters
+    // 2. Getters & Setters
 
     public String getId() {
         return id;
@@ -50,6 +54,13 @@ public class Customer {
         this.claims = claims;
     }
 
-    // Method to display customer details
-
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id='" + id + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", insuranceCard=" + insuranceCard +
+                ", claims=" + claims +
+                '}';
+    }
 }

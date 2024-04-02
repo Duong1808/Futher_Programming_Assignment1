@@ -1,10 +1,14 @@
+
+/**
+ * @author <Nguyen Tuan Duong - S3965530>
+ */
+
 public class BankingInfo {
     private String bank;
     private String name;
     private String number;
 
-    // Constructor
-
+    // 1. Constructor
     public BankingInfo() {}
 
     public BankingInfo(String bank, String name, String nummber) {
@@ -13,7 +17,7 @@ public class BankingInfo {
         this.number = nummber;
     }
 
-    // Getters & Setters
+    // 2. Getters & Setters
 
     public String getBank() {
         return bank;
@@ -37,5 +41,14 @@ public class BankingInfo {
 
     public void setNummber(String nummber) {
         this.number = nummber;
+    }
+
+    @Override
+    public String toString() {
+        return "BankingInfo{" +
+                "bank='" + bank + '\'' +
+                ", name='" + name + '\'' +
+                ", number='" + number + '\'' +
+                '}';
     }
 }

@@ -4,6 +4,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * @author <Nguyen Tuan Duong - S3965530>
+ */
+
 public class FileManager {
     // This class is used to handle file tasks
     private static String CUSTOMERS_FILE_PATH = "Further_Programming/src/customers.txt";
@@ -11,6 +16,9 @@ public class FileManager {
     private static String CLAIMS_FILE_PATH = "Further_Programming/src/claims.txt";
 
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
+
+    // 1. Read file method
+
     public List<Customer> readCustomersFromFile(String filename) {
         List<Customer> customers = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader("Further_Programming/src/customers.txt"))) {
@@ -21,7 +29,6 @@ public class FileManager {
                     Customer customer = new Customer();
                     customer.setId(data[0]);
                     customer.setFullName(data[1]);
-                    // Parse insurance card
                     InsuranceCard insuranceCard = parseInsuranceCard(data[2]);
                     customer.setInsuranceCard(insuranceCard);
                     customers.add(customer);
@@ -105,6 +112,7 @@ public class FileManager {
         return claims;
     }
 
+    // 2. Write to file method
     public void writeCustomersToFile(List<Customer> customers, String filename) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Further_Programming/src/customers.txt"))) {
             for (Customer customer : customers) {
@@ -161,5 +169,4 @@ public class FileManager {
             e.printStackTrace();
         }
     }
-
 }

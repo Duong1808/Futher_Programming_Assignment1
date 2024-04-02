@@ -1,12 +1,16 @@
 import java.util.Date;
 
+/**
+ * @author <Nguyen Tuan Duong - S3965530>
+ */
+
 public class InsuranceCard {
     private String cardNumber;
     private String cardHolder;
     private String policyOwner;
     private Date expirationDate;
 
-    // Constructor
+    // 1. Constructor
     public InsuranceCard() {}
     public InsuranceCard(String cardNumber, String cardHolder, String policyOwner, Date expirationDate) {
         this.cardNumber = cardNumber;
@@ -15,7 +19,7 @@ public class InsuranceCard {
         this.expirationDate = expirationDate;
     }
 
-    // Getters & Setters
+    // 2. Getters & Setters
 
     public String getCardNumber() {
         return cardNumber;
@@ -49,6 +53,13 @@ public class InsuranceCard {
         this.expirationDate = expirationDate;
     }
 
-    public void display() {
+    @Override
+    public String toString() {
+        return "InsuranceCard{" +
+                "cardNumber='" + cardNumber + '\'' +
+                ", cardHolder='" + cardHolder + '\'' +
+                ", policyOwner='" + policyOwner + '\'' +
+                ", expirationDate=" + expirationDate +
+                '}';
     }
 }

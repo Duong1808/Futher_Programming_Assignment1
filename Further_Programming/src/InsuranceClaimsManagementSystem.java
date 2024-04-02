@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author <Nguyen Tuan Duong - S3965530>
+ */
+
 public class InsuranceClaimsManagementSystem {
 
     public static void main(String[] args) {
@@ -20,8 +24,9 @@ public class InsuranceClaimsManagementSystem {
 
         ClaimProcessManager claimProcessManager = new ClaimProcessManagerImplementation(claims);
 
+        // 3. run user interface after read from file
         UI ui = new UI(customers, insuranceCards, claims);
-        ui.run();
+        ui.Menu();
 
         // 3. Save to the file
         fileManager.writeCustomersToFile(customers, "C:Further_Programming/src/customers.txt");
