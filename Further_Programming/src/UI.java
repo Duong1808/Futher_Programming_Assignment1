@@ -123,7 +123,7 @@ public class UI implements UserInterface {
             System.out.println("Claim not found.");
             return;
         }
-        System.out.println("Enter new details for the claim (press Enter to keep existing values):");
+        System.out.println("Enter new details for the claim: ");
         System.out.print("Claim Date (yyyy-MM-dd): ");
         String input = scanner.nextLine();
         if (!input.isEmpty()) {
