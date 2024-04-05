@@ -67,7 +67,7 @@ public class UI implements UserInterface {
     // 2. Method to add, delete, view claim
     public void addClaim() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Claim ID: ");
+        System.out.print("Claim ID (start with F): ");
         String id = scanner.nextLine();
         System.out.print("Claim Date (yyyy-MM-dd): ");
         String claimDateStr = scanner.nextLine();
@@ -79,7 +79,7 @@ public class UI implements UserInterface {
         }
         System.out.print("Insured Person: ");
         String insuredPerson = scanner.nextLine();
-        System.out.print("Insurance Card Number: ");
+        System.out.print("Insurance Card Number (start with IC): ");
         String cardNumber = scanner.nextLine();
         System.out.print("Exam Date (yyyy-MM-dd): ");
         String examDateStr = scanner.nextLine();
@@ -89,7 +89,7 @@ public class UI implements UserInterface {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        System.out.println("Document: ");
+        System.out.println("Document (example: doc1.pdf OR doc2.pdf): ");
         String document = scanner.nextLine();
         System.out.print("Claim Amount: ");
         double claimAmount = scanner.nextDouble();
@@ -97,7 +97,7 @@ public class UI implements UserInterface {
         System.out.print("Enter claim status (NEW, PROCESSING, DONE): ");
         String statusStr = scanner.next().toUpperCase();
         Claim.ClaimStatus status = Claim.ClaimStatus.valueOf(statusStr);
-        System.out.print("Enter banking info - Bank: ");
+        System.out.print("Enter banking info - Bank (example: bankA, bankB, ...): ");
         String bank = scanner.next();
         System.out.print("Enter banking info - Name: ");
         String name = scanner.next();
